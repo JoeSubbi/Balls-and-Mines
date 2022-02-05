@@ -25,14 +25,16 @@ public class BombDetection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAH");
         CheckIfHamster();
         if (entryTime != 0.0F && !detonated){
             if (Time.time >= detonationTime){
-                Debug.Log("EXPLODE!!!");
                 var explosionEffects = GetComponentInChildren<ParticleSystem>();
                 explosionEffects.Play(true);
                 detonated = true;
+                var overlap = Physics.OverlapSphere(transform.position, 10);
+                foreach (var obj in overlap)
+                    if (obj.GetComponent<Controls>() != null)
+                        obj.GetComponent<Rigidbody>().AddExplosionForce(100, transform.position + Vector3.down, 10);
             }
         }
     }
@@ -44,11 +46,7 @@ public class BombDetection : MonoBehaviour
                 // Set entryTime and detonationTime
                 entryTime = Time.time;
                 detonationTime = Time.time + 0.2F;
-                Debug.Log("Detonation time set");
             }
         }
-        // Play sound
-        // Set timer
-        // Explode!!!
     }
 }
