@@ -9,8 +9,8 @@ public class BombDetection : MonoBehaviour
 
     private float entryTime;
     private float detonationTime;
-
     private bool detonated;
+    public float detonationForce = 300;
 
     // private ParticleSystem explosionEffects;
 
@@ -34,7 +34,7 @@ public class BombDetection : MonoBehaviour
                 var overlap = Physics.OverlapSphere(transform.position, 10);
                 foreach (var obj in overlap)
                     if (obj.GetComponent<Controls>() != null)
-                        obj.GetComponent<Rigidbody>().AddExplosionForce(100, transform.position + Vector3.down, 10);
+                        obj.GetComponent<Rigidbody>().AddExplosionForce(detonationForce, transform.position + Vector3.down, 10);
                         GameObject.Find("Ball").GetComponent<HamsterHealth>().decrementHealth();
             }
         }
