@@ -22,17 +22,17 @@ public class BombDetection : MonoBehaviour
     {
         Debug.Log("AAAAAAAAAAAAAAAAAAAAAH");
         CheckIfHamster();
+        if (entryTime != 0.0F){
+            if (Time.time >= detonationTime){
+                Debug.Log("EXPLODE!!!");
+            }
+        }
     }
 
     void CheckIfHamster()
     {
         if (collider.bounds.Intersects(hamster.bounds)){
-            if (entryTime != 0.0F){
-                if (Time.time >= detonationTime){
-                    // EXPLODE
-                    Debug.Log("EXPLODE!!!");
-                }
-            } else {
+            if (entryTime == 0.0F){
                 // Set entryTime and detonationTime
                 entryTime = Time.time;
                 detonationTime = Time.time + 2;
