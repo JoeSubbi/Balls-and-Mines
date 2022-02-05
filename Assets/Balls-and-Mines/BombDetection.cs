@@ -35,6 +35,7 @@ public class BombDetection : MonoBehaviour
                 foreach (var obj in overlap)
                     if (obj.GetComponent<Controls>() != null)
                         obj.GetComponent<Rigidbody>().AddExplosionForce(100, transform.position + Vector3.down, 10);
+                        GameObject.Find("Ball").GetComponent<HamsterHealth>().decrementHealth();
             }
         }
     }
