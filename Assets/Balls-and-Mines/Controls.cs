@@ -8,6 +8,11 @@ public class Controls : MonoBehaviour
     public Rigidbody target;
     public float boost = 1;
     public float smoothing = 0.2f;
+    public float gravityScale = 5;
+
+    private Vector3 jump = new Vector3(0.0f, 1.0f, 0.0f);
+    private float jumpForce = 0.5f;
+    private bool isGrounded;
 
     public Camera cam;
 
@@ -23,10 +28,19 @@ public class Controls : MonoBehaviour
             force.z++;
         if (Input.GetKey("d"))
             force.z--;
+        
+        if (Input.GetKey("space") && isGrounded){
+            target.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
 
         force = Vector3.Lerp(force, new Vector3(0,0,0), smoothing);
 
         target.AddForce(force * boost);
 
+    }
+
+    void OnCollisionStay(){
+        isGrounded = true;
     }
 }
