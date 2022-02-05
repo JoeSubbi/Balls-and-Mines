@@ -26,8 +26,7 @@ public class BombDetection : MonoBehaviour
 
     void CheckIfHamster()
     {
-        if (Vector3.Distance(hamster.transform.position, this.transform.position)
-            < (collider.radius + hamster.radius)){
+        if (collider.bounds.Intersects(hamster.bounds)){
             if (entryTime != 0.0F){
                 if (Time.time >= detonationTime){
                     // EXPLODE
