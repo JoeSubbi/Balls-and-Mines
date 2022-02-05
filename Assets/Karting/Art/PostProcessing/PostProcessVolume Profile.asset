@@ -65,7 +65,7 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 10
+    value: 21
   brightness:
     overrideState: 0
     value: 0
@@ -1394,7 +1394,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2
+    value: 1.48
   threshold:
     overrideState: 1
     value: 1

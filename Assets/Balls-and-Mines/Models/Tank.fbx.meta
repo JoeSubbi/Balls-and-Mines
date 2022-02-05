@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: c15aab25262b9195cb13961513c2655f
+guid: c95ef6c0d7984074ca049b21db1930f1
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Armour
+    second: {fileID: 2100000, guid: 451b1359bbcc76649ad11dcd06500911, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 969192741bf13374d813b7b36f435e9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Treads
+    second: {fileID: 2100000, guid: 43d5f182f0a3cc6469d1158fadf97c02, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
