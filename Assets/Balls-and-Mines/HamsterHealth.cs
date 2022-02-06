@@ -5,14 +5,13 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class HamsterHealth : MonoBehaviour{
     public float health;
-    public bool life;
+    public static bool life;
     public HealthBar healthBar;
-    public static bool HAMMY = true;
     public GameObject gameOver;
 
     private float saturation = 20;
 
-    void Start(){
+    void Awake(){
         health = 3.0F;
         life = true;
         healthBar.SetMaxHealth(health);
@@ -31,7 +30,7 @@ public class HamsterHealth : MonoBehaviour{
 
     bool CheckLife(){
         if (health <= 0.0F){
-            HAMMY = false;
+            life = false;
             gameOver.SetActive(true);
             saturation = Mathf.Lerp(saturation, -100, 0.01f);
             GameObject.Find("FX").GetComponent<PostProcessVolume>().profile.GetSetting<ColorGrading>().saturation.Override( saturation );

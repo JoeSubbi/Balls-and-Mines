@@ -12,8 +12,10 @@ public class TankMovement : MonoBehaviour{
     }
 
     public void Update(){
+
         HamsterPosition = GameObject.Find("Ball").transform.position;
-        rotateTowards(HamsterPosition);
+        if (Vector3.Distance(HamsterPosition, transform.position) < 60.0F)
+            rotateTowards(HamsterPosition);
 
         if (Vector3.Distance(HamsterPosition, transform.position) < 30.0F){
             shoot();
@@ -31,6 +33,8 @@ public class TankMovement : MonoBehaviour{
         if (!fired){
             var explosionEffects = GetComponentInChildren<ParticleSystem>();
             explosionEffects.Play(true);
+
+            GameObject.Find("FX").GetComponent<AudioSource>().Play(0);
             fired = true;
 
             var coroutine = DelayedImpact();
@@ -39,17 +43,19 @@ public class TankMovement : MonoBehaviour{
     }
 
     private IEnumerator DelayedImpact(){
-            var impact = GameObject.Find("Impact");
-            impact.transform.position = HamsterPosition;
+        var impact = GameObject.Find("Impact");
+        impact.transform.position = HamsterPosition;
 
-            yield return new WaitForSeconds(0.2F);
-            impact.GetComponent<ParticleSystem>().Play(true);
-            
-            var overlap = Physics.OverlapSphere(impact.transform.position, 10);
-                foreach (var obj in overlap)
-                    if (obj.GetComponent<Controls>() != null)
-                        // for some reason this force isn't being applied right now
-                        obj.GetComponent<Rigidbody>().AddExplosionForce(detonationForce, transform.position + Vector3.forward, 20);
-                        GameObject.Find("Ball").GetComponent<HamsterHealth>().decrementHealth();
+        yield return new WaitForSeconds(0.2F);
+        impact.GetComponent<ParticleSystem>().Play(true); 
+
+        GameObject.Find("FX").GetComponent<AudioSource>().Play(0);
+
+        var overlap = Physics.OverlapSphere(impact.transform.position, 10);
+        foreach (var obj in overlap)
+            if (obj.GetComponent<Controls>() != null)
+                // for some reason this force isn't being applied right now
+                obj.GetComponent<Rigidbody>().AddExplosionForce(detonationForce, transform.position + Vector3.forward, 20);
+                GameObject.Find("Ball").GetComponent<HamsterHealth>().decrementHealth();
     }
 }

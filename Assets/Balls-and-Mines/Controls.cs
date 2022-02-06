@@ -18,7 +18,7 @@ public class Controls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (HamsterHealth.HAMMY)
+        if (HamsterHealth.life)
         {
             if (Input.GetKey("w"))
                 force.x = 1;
@@ -42,7 +42,9 @@ public class Controls : MonoBehaviour
         }
     }
 
-    void OnCollisionStay(){
+    void OnCollisionEnter(){
         isGrounded = true;
+
+        GetComponent<AudioSource>().Play(0);
     }
 }

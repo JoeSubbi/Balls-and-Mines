@@ -30,6 +30,9 @@ public class BombDetection : MonoBehaviour
             if (Time.time >= detonationTime){
                 var explosionEffects = GetComponentInChildren<ParticleSystem>();
                 explosionEffects.Play(true);
+
+                GameObject.Find("FX").GetComponent<AudioSource>().Play(0);
+
                 detonated = true;
                 var overlap = Physics.OverlapSphere(transform.position, 10);
                 foreach (var obj in overlap)
