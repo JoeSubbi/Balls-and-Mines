@@ -15,14 +15,14 @@ public class Controls : MonoBehaviour
     void Update()
     {
         if (Input.GetKey("w"))
-            force.x ++;
+            force.x = Mathf.Clamp(force.x + 1, -2, 2);
         if (Input.GetKey("s"))
-            force.x --;
+            force.x = Mathf.Clamp(force.x - 1, -2, 2);
 
         if (Input.GetKey("a"))
-            force.z++;
+            force.z = Mathf.Clamp(force.z + 1, -2, 2);
         if (Input.GetKey("d"))
-            force.z--;
+            force.z = Mathf.Clamp(force.z - 1, -2, 2);
 
         force = Vector3.Lerp(force, new Vector3(0,0,0), smoothing);
 
