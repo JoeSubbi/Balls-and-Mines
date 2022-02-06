@@ -31,6 +31,17 @@ public class TankMovement : MonoBehaviour{
             var explosionEffects = GetComponentInChildren<ParticleSystem>();
             explosionEffects.Play(true);
             fired = true;
+
+            var coroutine = DelayedImpact();
+            StartCoroutine(coroutine);
         }
+    }
+
+    private IEnumerator DelayedImpact(){
+            var impact = GameObject.Find("Impact");
+            impact.transform.position = HamsterPosition;
+
+            yield return new WaitForSeconds(0.2F);
+            impact.GetComponent<ParticleSystem>().Play(true);
     }
 }
