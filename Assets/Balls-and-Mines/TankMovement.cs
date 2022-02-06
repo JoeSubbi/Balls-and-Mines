@@ -5,6 +5,7 @@ using UnityEngine;
 public class TankMovement : MonoBehaviour{
     public Vector3 HamsterPosition;
     public bool fired = false;
+    public float detonationForce = 100;
 
     public void Start(){
         HamsterPosition = GameObject.Find("Ball").transform.position;
@@ -43,5 +44,12 @@ public class TankMovement : MonoBehaviour{
 
             yield return new WaitForSeconds(0.2F);
             impact.GetComponent<ParticleSystem>().Play(true);
+            
+            var overlap = Physics.OverlapSphere(impact.transform.position, 10);
+                foreach (var obj in overlap)
+                    if (obj.GetComponent<Controls>() != null)
+                        // for some reason this force isn't being applied right now
+                        obj.GetComponent<Rigidbody>().AddExplosionForce(detonationForce, transform.position + Vector3.forward, 20);
+                        GameObject.Find("Ball").GetComponent<HamsterHealth>().decrementHealth();
     }
 }
