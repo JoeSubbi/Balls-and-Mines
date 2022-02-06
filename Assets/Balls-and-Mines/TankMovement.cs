@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TankMovement : MonoBehaviour{
     public Vector3 HamsterPosition;
+    public bool fired = false;
 
     public void Start(){
         HamsterPosition = GameObject.Find("Ball").transform.position;
@@ -12,6 +13,10 @@ public class TankMovement : MonoBehaviour{
     public void Update(){
         HamsterPosition = GameObject.Find("Ball").transform.position;
         rotateTowards(HamsterPosition);
+
+        if (Vector3.Distance(HamsterPosition, transform.position) < 30.0F){
+            shoot();
+        }
     }
 
     private void rotateTowards(Vector3 to){
@@ -19,5 +24,13 @@ public class TankMovement : MonoBehaviour{
                                         (to - transform.position).normalized);
         lookRotation *= Quaternion.Euler(-90, -90, 0);
         transform.rotation = lookRotation;
+    }
+
+    private void shoot(){
+        if (!fired){
+            var explosionEffects = GetComponentInChildren<ParticleSystem>();
+            explosionEffects.Play(true);
+            fired = true;
+        }
     }
 }
