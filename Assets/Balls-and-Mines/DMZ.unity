@@ -2077,6 +2077,7 @@ GameObject:
   - component: {fileID: 1221258855898518480}
   - component: {fileID: 5065847856050089959}
   - component: {fileID: 1316898628}
+  - component: {fileID: 8963399878313419665}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -2084,3 +2085,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8963399878313419665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963399878313419664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5595588258b7dd3278d643d4062ee727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HamsterPosition: {x: 0, y: 0, z: 0}
