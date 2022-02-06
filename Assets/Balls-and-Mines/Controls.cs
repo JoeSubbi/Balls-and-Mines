@@ -18,25 +18,28 @@ public class Controls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("w"))
-            force.x = 1;
-        if (Input.GetKey("s"))
-            force.x = -1;
+        if (HamsterHealth.HAMMY)
+        {
+            if (Input.GetKey("w"))
+                force.x = 1;
+            if (Input.GetKey("s"))
+                force.x = -1;
 
-        if (Input.GetKey("a"))
-            force.z = 1;
-        if (Input.GetKey("d"))
-            force.z = -1;
-        
-        if (Input.GetKey("space") && isGrounded){
-            target.AddForce(jump * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
+            if (Input.GetKey("a"))
+                force.z = 1;
+            if (Input.GetKey("d"))
+                force.z = -1;
+
+            if (Input.GetKey("space") && isGrounded)
+            {
+                target.AddForce(jump * jumpForce, ForceMode.Impulse);
+                isGrounded = false;
+            }
+
+            force = Vector3.Lerp(force, new Vector3(0, 0, 0), smoothing);
+
+            target.AddForce(force * boost);
         }
-
-        force = Vector3.Lerp(force, new Vector3(0,0,0), smoothing);
-
-        target.AddForce(force * boost);
-
     }
 
     void OnCollisionStay(){
