@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Balls-and-Mines/DMZ.unity
     guid: 77ef6e15e69abd14c86c1dceefeb6b98
+  - enabled: 1
+    path: Assets/Balls-and-Mines/EndingScene/EndingScene.unity
+    guid: 1d58ef9e6011d935baa5d5afb31f0fd1
   m_configObjects: {}

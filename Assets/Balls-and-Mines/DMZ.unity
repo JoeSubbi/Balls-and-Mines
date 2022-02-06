@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7586549, g: 0.7266573, b: 0.6740246, a: 1}
+  m_IndirectSpecularColor: {r: 0.7586531, g: 0.72665536, b: 0.6740229, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -349,6 +349,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &170162161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9182123637620329669, guid: 7233a56f29fd8684894106f700766a57,
+    type: 3}
+  m_PrefabInstance: {fileID: 9182123638123447499}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &170162162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170162161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efaf83df25b1fcc88669a4a572a3966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hamster: {fileID: 1967707531}
 --- !u!1 &434807393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1479,16 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637620329669, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_Name
+      value: EndingBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637620329669, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637629432488, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
