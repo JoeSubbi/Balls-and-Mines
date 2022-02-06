@@ -26,9 +26,9 @@ public class Controls : MonoBehaviour
                 force.x = -1;
 
             if (Input.GetKey("a"))
-                force.z = 1;
+                force.z = 2;
             if (Input.GetKey("d"))
-                force.z = -1;
+                force.z = -2;
 
             if (Input.GetKey("space") && isGrounded)
             {
