@@ -19,14 +19,14 @@ public class Controls : MonoBehaviour
     void Update()
     {
         if (Input.GetKey("w"))
-            force.x ++;
+            force.x = 1;
         if (Input.GetKey("s"))
-            force.x --;
+            force.x = -1;
 
         if (Input.GetKey("a"))
-            force.z++;
+            force.z = 1;
         if (Input.GetKey("d"))
-            force.z--;
+            force.z = -1;
         
         if (Input.GetKey("space") && isGrounded){
             target.AddForce(jump * jumpForce, ForceMode.Impulse);
