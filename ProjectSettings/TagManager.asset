@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CrashMode
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - Kart
   - TrainingCheckpoints
   - Bombs
-  - 
-  - 
+  - Ball
+  - Ending
   - 
   - 
   - 

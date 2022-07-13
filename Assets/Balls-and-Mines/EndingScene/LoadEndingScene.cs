@@ -5,15 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LoadEndingScene : MonoBehaviour {
     private BoxCollider collider;
-    public SphereCollider hamster;
 
-    public void Start(){
+    public void Start()
+    {
         collider = GetComponent<BoxCollider>();
     }
 
-    public void Update(){
-        if (collider.bounds.Intersects(hamster.bounds)){
-            SceneManager.LoadScene("EndingScene");
-        }
+    public void OnTriggerEnter(Collider col)
+    {
+        SceneManager.LoadScene("EndingScene");
     }
 }

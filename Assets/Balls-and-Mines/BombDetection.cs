@@ -7,10 +7,12 @@ public class BombDetection : MonoBehaviour
     private SphereCollider collider;
     public SphereCollider hamster;
 
-    private float entryTime;
     private float detonationTime;
     private bool detonated;
+    private bool armed;
     public float detonationForce = 300;
+
+    private GameObject hamsterHit;
 
     // private ParticleSystem explosionEffects;
 
@@ -18,15 +20,14 @@ public class BombDetection : MonoBehaviour
     void Start()
     {
         collider = GetComponent<SphereCollider>();
-        entryTime = 0.0F;
         detonated = false;
+        armed = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckIfHamster();
-        if (entryTime != 0.0F && !detonated){
+        if (armed == true && detonated == false){
             if (Time.time >= detonationTime){
                 var explosionEffects = GetComponentInChildren<ParticleSystem>();
                 explosionEffects.Play(true);
@@ -38,19 +39,23 @@ public class BombDetection : MonoBehaviour
                 foreach (var obj in overlap)
                     if (obj.GetComponent<Controls>() != null)
                         obj.GetComponent<Rigidbody>().AddExplosionForce(detonationForce, transform.position + Vector3.down, 10);
-                        GameObject.Find("Ball").GetComponent<HamsterHealth>().decrementHealth();
+                        hamsterHit.GetComponent<HamsterHealth>().decrementHealth();
+                        StartCoroutine(DestroySelf());
             }
         }
     }
 
-    void CheckIfHamster()
+    IEnumerator DestroySelf()
     {
-        if (collider.bounds.Intersects(hamster.bounds)){
-            if (entryTime == 0.0F){
-                // Set entryTime and detonationTime
-                entryTime = Time.time;
-                detonationTime = Time.time + 0.2F;
-            }
-        }
+        yield return new WaitForSeconds(1);
+
+        Destroy(gameObject);
+    }
+
+    public void OnTriggerEnter(Collider col)
+    {
+        armed = true;
+        detonationTime = Time.time + 0.2f;
+        hamsterHit = col.gameObject;
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7586549, g: 0.7266573, b: 0.6740246, a: 1}
+  m_IndirectSpecularColor: {r: 0.7586533, g: 0.7266558, b: 0.6740237, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1122,6 +1122,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148945236}
   m_CullTransparentMesh: 1
+--- !u!1 &1406681502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1406681504}
+  - component: {fileID: 1406681503}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1406681503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406681502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33bcd0331e997345820b41c57a545fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: {fileID: 1001599817}
+--- !u!4 &1406681504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406681502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1481.6125, y: -205.9823, z: -0.3494568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1440459957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,7 +1549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efaf83df25b1fcc88669a4a572a3966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hamster: {fileID: 1967707531}
 --- !u!1001 &1621826522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1568,15 +1611,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1018664272722485354, guid: c08d483204cd2514f98a621e5067eb38,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c08d483204cd2514f98a621e5067eb38,
         type: 3}
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c08d483204cd2514f98a621e5067eb38,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 4424396828587804706, guid: c08d483204cd2514f98a621e5067eb38,
         type: 3}
       propertyPath: m_Name
       value: Hamster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424396828587804706, guid: c08d483204cd2514f98a621e5067eb38,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c08d483204cd2514f98a621e5067eb38, type: 3}
@@ -1824,6 +1882,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1967707537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967707530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27be139480f2ce428db72fb0c192506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!1 &2040642975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,6 +2376,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 9182123636949997085, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123636949997086, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2314,41 +2391,86 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123636954714255, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123636959248740, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123636959248741, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123636962427041, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123636962427042, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123636992063201, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123636992063202, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637015358883, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637015358892, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637016505716, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637016505717, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637029901646, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637029901647, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637030586080, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637030586081, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637032294177, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637032294178, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2359,86 +2481,176 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637041950831, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637044506142, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637044506143, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637052873984, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637052873985, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637058083953, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637058083954, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637062192045, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637062192046, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637066098451, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637066098460, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637072678880, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637072678881, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637075221116, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637075221117, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637079008649, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637079008650, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637082708985, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637082708986, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637095837006, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637095837007, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637106051674, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637106051675, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637134521285, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637134521286, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637140287307, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637140287412, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637142738730, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637142738731, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637144550355, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637144550364, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637150817058, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637150817059, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637161396230, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637161396231, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2449,11 +2661,26 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637173206619, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637187143066, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637187143067, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637201381562, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637201381563, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2464,76 +2691,156 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637205404503, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637209146936, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637209146943, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637220129284, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637220129307, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637249853744, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637249853745, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637260972148, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637260972149, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637265213217, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637265213218, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637268643092, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637268643093, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637271693310, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637271693311, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637283491260, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637283491261, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637300322414, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637300322415, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637307555058, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637307555059, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637318952472, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637318952473, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637320217811, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637320217820, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637338964734, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637338964735, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637344863051, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637344863156, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637351934177, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637351934178, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2544,11 +2851,26 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637356634575, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637360399203, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637360399212, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637371798661, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637371798662, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2559,51 +2881,106 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637378294079, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637383912336, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637383912337, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637389575684, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637389575685, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637403153747, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637403153756, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637408293092, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637408293093, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637408317873, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637408317874, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637416302284, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637416302285, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637431108782, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637431108783, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637435039486, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637435039487, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637440962886, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637440962887, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637447359753, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637447359754, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2614,26 +2991,56 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637475984823, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637481668557, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637481668558, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637488864738, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637488864739, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637498134060, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637498134061, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637500004844, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637500004845, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637518188321, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637518188322, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2644,6 +3051,16 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637543001275, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637583498645, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637583498646, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2654,26 +3071,56 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637596078683, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637599274853, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637599274854, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637600716382, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637600716383, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637602439124, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637602439125, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637607960020, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637607960021, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637609977670, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637609977671, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2687,33 +3134,68 @@ PrefabInstance:
     - target: {fileID: 9182123637620329669, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637620329691, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9182123637629432488, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637629432495, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637649539777, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637649539778, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637651752403, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637651752412, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637667815744, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637667815745, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637669053764, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637669053765, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637673915110, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637673915111, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2724,26 +3206,56 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637680634127, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637690149421, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637690149422, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637707011070, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637707011071, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637711084532, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637711084533, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637712343596, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637712343597, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637729150154, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637729150155, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2754,31 +3266,66 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637745186439, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637748937634, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637748937635, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637748997769, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637748997770, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637764325166, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637764325167, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637767732381, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637767732382, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637783165597, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637783165598, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637785980476, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637785980477, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2789,56 +3336,116 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637793843803, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637811007366, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637811007367, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637823255702, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637823255703, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637839669566, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637839669567, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637875568758, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637875568759, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637878952677, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637878952678, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637883386216, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637883386217, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637890877886, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637890877887, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637906053553, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637906053554, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637916042113, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637916042114, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637928474014, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637928474015, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637949348948, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637949348949, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2849,6 +3456,16 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123637981941351, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123637987536498, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123637987536499, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2859,11 +3476,26 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638020425471, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638020656138, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638020656139, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638035154370, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638035154371, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2874,21 +3506,46 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638037494375, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638044071120, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638044071121, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638044378645, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638044378646, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638048639078, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638048639079, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638052190129, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638052190130, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2899,26 +3556,56 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638063879951, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638103600723, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638103600732, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638104414419, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638104414428, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638111608320, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638111608321, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638115056566, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638115056567, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638123783530, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638123783531, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -2984,76 +3671,151 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map Container
       objectReference: {fileID: 0}
+    - target: {fileID: 9182123638144078404, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638144078405, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638148293752, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638148293753, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638148790356, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638148790357, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638151023410, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638151023411, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638152067005, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638152067006, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638158218097, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638158218098, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638158619009, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638158619010, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638177260448, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638177260449, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638185840870, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638185840871, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638218419217, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638218419218, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638231743888, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638231743889, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638235198040, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638235198041, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638235747941, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638235747942, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638239607981, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638239607982, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638246131605, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638246131606, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3064,6 +3826,16 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638259324359, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638262146402, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638262146403, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3074,11 +3846,26 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638273412791, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638283055720, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638283055721, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638329158694, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638329158695, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3089,6 +3876,16 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638332468763, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638338634440, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638338634441, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3099,6 +3896,16 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638348465159, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638349642012, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638349642013, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3109,76 +3916,156 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638351285487, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638364084546, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638364084547, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638368120886, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638368120887, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638372048178, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638372048179, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638375910252, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638375910253, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638377938964, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638377938965, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638395645581, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638395645582, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638418367600, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638418367601, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638433089050, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638433089051, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638459143894, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638459143895, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638461747665, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638461747666, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638488840305, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638488840306, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638493200676, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638493200677, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638496035137, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638496035138, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638502131886, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638502131887, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638511601498, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638511601499, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3189,6 +4076,16 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638521832795, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638522944157, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638522944158, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3199,11 +4096,26 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638527187291, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638542296077, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638542296078, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638571124813, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638571124814, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3214,26 +4126,56 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638592993879, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638601647569, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638601647570, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638606421388, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638606421389, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638610553216, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638610553217, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638613795117, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638613795118, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638619719193, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638619719194, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3244,36 +4186,76 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638637294535, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638643774611, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638643774620, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638654160848, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638654160849, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638656875186, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638656875187, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638660471384, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638660471385, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638676177546, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638676177547, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638680201793, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638680201794, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638682395660, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638682395661, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3284,16 +4266,36 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638685297303, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638698350364, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638698350365, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638709298870, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638709298871, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638754353825, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638754353826, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3304,21 +4306,46 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638757298959, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638766141413, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638766141414, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638767390766, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638767390767, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638767410716, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638767410717, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638771621562, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638771621563, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3329,51 +4356,106 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638788071023, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638793715233, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638793715234, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638796740728, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638796740729, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638802479411, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638802479420, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638803923472, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638803923473, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638822636417, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638822636418, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638823058490, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638823058491, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638827400530, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638827400531, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638830943644, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638830943645, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638832592389, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638832592390, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638854946172, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638854946173, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3384,16 +4466,36 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638859332327, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638873018397, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638873018398, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638878129309, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638878129310, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638895891112, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638895891113, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3404,46 +4506,96 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638900897339, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638903207896, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638903207903, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638909475952, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638909475959, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638919781509, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638919781531, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638924538589, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638924538590, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638930268147, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638930268156, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638934031358, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638934031359, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638944786342, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638944786343, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638957101004, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638957101005, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638965412000, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638965412001, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
@@ -3454,61 +4606,126 @@ PrefabInstance:
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638975312703, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182123638978143640, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638978143641, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123638986195033, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123638986195034, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123639016245350, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123639016245351, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123639018988214, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123639018988215, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123639019730350, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123639019730351, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123639026787876, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123639026787877, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123639026846638, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123639026846639, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123639033501011, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123639033501020, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123639035643257, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123639035643258, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123639062726996, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123639062726997, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123639069507456, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123639069507457, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
       value: 
       objectReference: {fileID: 1967707531}
+    - target: {fileID: 9182123639079449224, guid: 7233a56f29fd8684894106f700766a57,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9182123639079449225, guid: 7233a56f29fd8684894106f700766a57,
         type: 3}
       propertyPath: hamster
