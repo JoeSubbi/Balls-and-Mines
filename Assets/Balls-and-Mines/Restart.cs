@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
-public class Restart : MonoBehaviour
+public class Restart : MonoBehaviourPunCallbacks
 {
     public void ReloadScene()
     {

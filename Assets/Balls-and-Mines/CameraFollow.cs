@@ -11,7 +11,10 @@ public class CameraFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, target.position + offset, smoothSpeed);
-        transform.LookAt(target);
+        if (target != null)
+        {
+            transform.position = Vector3.Lerp(transform.position, target.position + offset, smoothSpeed);
+            transform.LookAt(target);
+        }
     }
 }
